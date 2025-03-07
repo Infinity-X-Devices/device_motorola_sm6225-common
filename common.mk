@@ -219,6 +219,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
+# MindTheGapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
 # MotoActions
 PRODUCT_PACKAGES += \
     MotoActions \
