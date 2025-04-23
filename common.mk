@@ -149,6 +149,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
 
+# GApps
+WITH_GAPPS := true
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
@@ -219,9 +222,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
-# MindTheGapps
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
-
 # MotoActions
 PRODUCT_PACKAGES += \
     MotoActions \
@@ -247,7 +247,7 @@ PRODUCT_PACKAGES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-infinity
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
@@ -303,6 +303,13 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
+
+# Project Infinity X
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := "Deivid21"
+TARGET_SUPPORTS_BLUR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+USE_MOTO_CALCULATOR := false
 
 # Public libraries
 PRODUCT_COPY_FILES += \
